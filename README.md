@@ -6,13 +6,13 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://python.org)
-[![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-blueviolet)](https://claude.ai/code)
+[![Claude Code](<https://img.shields.io/badge/Claude%20Code-Skill-blueviolet>)](https://claude.ai/code)
 [![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-green)](https://agentskills.io)
 
 &nbsp;
 
-提供前任的原材料（微信聊天记录、QQ消息、朋友圈截图、照片）加上你的主观描述  
-生成一个**真正像ta的 AI Skill**  
+提供前任的原材料（微信聊天记录、QQ消息、朋友圈截图、照片）加上你的主观描述
+生成一个**真正像ta的 AI Skill**
 用ta的口头禅说话，用ta的方式回复你，记得你们一起去过的地方
 
 ⚠️ **本项目仅用于个人回忆与情感疗愈，不用于骚扰、跟踪或侵犯他人隐私。**
@@ -43,9 +43,9 @@ pip3 install -r requirements.txt
 ```
 
 ---
- 
+
 ## 环境要求
- 
+
 - **Claude Code**：免费安装，需要 Node.js 18+（[安装指南](https://docs.anthropic.com/en/docs/claude-code)）
 - **API 消耗**：创建一个前任 Skill 大约消耗 5k-15k tokens，取决于聊天记录量
 - **付费方式**（二选一）：
@@ -53,7 +53,7 @@ pip3 install -r requirements.txt
   - Anthropic API Key：按量付费，需在 Claude Code 中配置 key
 - **替代前端**：也可以使用 [OpenClaw](https://github.com/nicepkg/openclaw) 运行本 Skill
 - **不需要 GPU**，不需要本地模型，不需要 Docker
- 
+
 ---
 
 ## 使用
@@ -70,15 +70,15 @@ pip3 install -r requirements.txt
 
 ### 管理命令
 
-| 命令 | 说明 |
-|------|------|
-| `/list-exes` | 列出所有前任 Skill |
-| `/{slug}` | 调用完整 Skill（像ta一样跟你聊天） |
-| `/{slug}-memory` | 回忆模式（帮你回忆那些事） |
-| `/{slug}-persona` | 仅人物性格 |
-| `/ex-rollback {slug} {version}` | 回滚到历史版本 |
-| `/delete-ex {slug}` | 删除 |
-| `/let-go {slug}` | 放下 |
+| 命令                              | 说明                               |
+| --------------------------------- | ---------------------------------- |
+| `/list-exes`                    | 列出所有前任 Skill                 |
+| `/{slug}`                       | 调用完整 Skill（像ta一样跟你聊天） |
+| `/{slug}-memory`                | 回忆模式（帮你回忆那些事）         |
+| `/{slug}-persona`               | 仅人物性格                         |
+| `/ex-rollback {slug} {version}` | 回滚到历史版本                     |
+| `/delete-ex {slug}`             | 删除                               |
+| `/let-go {slug}`                | 放下                               |
 
 ---
 
@@ -132,22 +132,22 @@ pip3 install -r requirements.txt
 
 ### 数据源
 
-| 来源 | 格式 | 备注 |
-|------|------|------|
-| 微信聊天记录 | WeChatMsg / 留痕 / PyWxDump 导出 | 推荐，信息最丰富 |
-| QQ 聊天记录 | txt / mht 导出 | 适合学生时代的恋情 |
-| 朋友圈/微博 | 截图 | 提取公开人设 |
-| 照片 | JPEG/PNG（含 EXIF） | 提取时间线和地点 |
-| 口述/粘贴 | 纯文本 | 你的主观记忆 |
+| 来源         | 格式                             | 备注               |
+| ------------ | -------------------------------- | ------------------ |
+| 微信聊天记录 | WeChatMsg / 留痕 / PyWxDump 导出 | 推荐，信息最丰富   |
+| QQ 聊天记录  | txt / mht 导出                   | 适合学生时代的恋情 |
+| 朋友圈/微博  | 截图                             | 提取公开人设       |
+| 照片         | JPEG/PNG（含 EXIF）              | 提取时间线和地点   |
+| 口述/粘贴    | 纯文本                           | 你的主观记忆       |
 
 ### 生成的 Skill 结构
 
 每个前任 Skill 由两部分组成，共同驱动输出：
 
-| 部分 | 内容 |
-|------|------|
+| 部分                                    | 内容                                                             |
+| --------------------------------------- | ---------------------------------------------------------------- |
 | **Part A — Relationship Memory** | 共同经历、约会地点、inside jokes、争吵模式、甜蜜瞬间、关系时间线 |
-| **Part B — Persona** | 5 层性格结构：硬规则 → 身份 → 说话风格 → 情感模式 → 关系行为 |
+| **Part B — Persona**             | 5 层性格结构：硬规则 → 身份 → 说话风格 → 情感模式 → 关系行为 |
 
 运行逻辑：`收到消息 → Persona 判断ta会怎么回 → Memory 补充共同记忆 → 用ta的方式输出`
 
@@ -208,23 +208,22 @@ create-ex/
 * 本项目不鼓励对前任的不健康执念，如果你发现自己过于沉浸，请寻求专业帮助
 * 你的前任是一个真实的人，ta有自己的人生。这个 Skill 只是你记忆中的ta
 
-
 ---
 
 ## 社区生态
- 
+
 以下项目由社区贡献者独立开发，与本项目互补：
- 
-| 项目 | 作者 | 说明 |
-|------|------|------|
-| [ex-cure-skill](https://github.com/W1ndys/ex-cure-skill) | @W1ndys | 关系反思模式，从聊天记录中复盘经验教训 |
-| [同事.skill](https://github.com/titanwings/colleague-skill) | @titanwings | 本项目的灵感来源，把同事蒸馏成 AI Skill |
-| [simp-skill](https://github.com/BeamusWayne/simp-skill) | @BeamusWayne | 与其怀念前任，不如勇敢追爱 |
- 
+
+| 项目                                                       | 作者         | 说明                                    |
+| ---------------------------------------------------------- | ------------ | --------------------------------------- |
+| [ex-cure-skill](https://github.com/W1ndys/ex-cure-skill)    | @W1ndys      | 关系反思模式，从聊天记录中复盘经验教训  |
+| [同事.skill](https://github.com/titanwings/colleague-skill) | @titanwings  | 本项目的灵感来源，把同事蒸馏成 AI Skill |
+| [simp-skill](https://github.com/BeamusWayne/simp-skill)     | @BeamusWayne | 与其怀念前任，不如勇敢追爱              |
+
 ---
 
-
 ### 写在最后
+
 人的记忆是一种不讲道理的存储介质。
 你记不住高数公式，记不住车牌号，记不住今天是几号，但你清楚记得四年前的一个下午ta穿了一件白T恤站在便利店门口等你，手里拿着两根冰棍，一根给你，一根ta自己。
 这不公平。
